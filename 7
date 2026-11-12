@@ -1,0 +1,16 @@
+class Solution {
+    public int numIdenticalPairs(int[] nums) {
+        int goodPairs = 0;
+        // Constraints state 1 <= nums[i] <= 100
+        int[] count = new int[101]; 
+        
+        for (int num : nums) {
+            // Add the number of times 'num' has been seen so far
+            goodPairs += count[num];
+            // Increment the frequency of 'num'
+            count[num]++;
+        }
+        
+        return goodPairs;
+    }
+}
